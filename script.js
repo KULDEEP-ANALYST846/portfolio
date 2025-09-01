@@ -175,7 +175,13 @@ const projectDetails = {
             //     caption: "Sales Performance Analysis"
             // }
         ],
-        video: "videos/Hotel analysis.mp4"
+        video: `
+                <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/QAwDlv9LeJw?si=0X0sqh2dSXKEA23Y"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+                                gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>`
     },
     project3: {
         title: "Hospitality Analytics Dashboard", 
