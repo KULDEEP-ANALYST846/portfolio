@@ -167,7 +167,7 @@ const projectDetails = {
                     <p>In the future, I plan to work on more hotel industry-related projects to gain a deeper understanding of the industry and enhance my knowledge.</p>`,
         images: [
             {
-                src: "./images/_C__Users_kulde_Downloads_practice.html.png",
+                src: "./images/hotel.png",
                 caption: "Hotel Analysis."
             }
             // {
