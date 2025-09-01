@@ -283,16 +283,16 @@ function openProjectModal(projectId) {
     
     // Load your predefined video
     const videoContainer = document.getElementById('videoContainer');
-    if (project.video) {
-        videoContainer.innerHTML = `<iframe src="${project.video}" allowfullscreen></iframe>`;
-    } else {
-        videoContainer.innerHTML = `
-            <div class="video-placeholder">
+   
+            if (project.video) {
+            videoContainer.innerHTML = project.video;      // ← nothing extra
+            } else {
+            videoContainer.innerHTML = `
+                <div class="video-placeholder">
                 <i class="fab fa-youtube"></i>
                 <p>No video available for this project yet</p>
-            </div>
-        `;
-    }
+                </div>`;
+            }
     
     // Show modal
     modal.style.display = 'block';
