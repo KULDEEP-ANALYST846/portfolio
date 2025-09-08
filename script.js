@@ -184,19 +184,52 @@ const projectDetails = {
                         allowfullscreen></iframe>`
     },
     project3: {
-        title: "Hospitality Analytics Dashboard", 
-        description: "This project exemplifies the transformative power of data in the hospitality industry by analyzing critical metrics such as Revenue, ADR, RevPAR, Occupancy%, Realization%, Cancellation%, DBRN, and DSRN, offering actionable insights for improved performance and decision-making.",
+        title: "Website Traffic and User Engagement Analysis", 
+        description:`This project analyzes website user behavior and engagement across different days, hours, and traffic channels.
+                    <h4>Problem Statement</h3>
+                    <ul>
+                        <li>How do hour, day, and user channel affect website engagement and session quality?
+                        <li>Can we identify high-impact periods and channels for optimized marketing?
+                    </ul>
+                    <h4>Key Insights</h3>
+                    <ul>
+                        <li>Organic Social Channel drives the Highest Traffic
+                        <li>Most of the Traffic arives at late evenings(8-12)
+                        <li>Refferl Channel has the Highest Engagement Rate and Engagement Sessions.
+                        <li>Engagement time and rates peak on weekdays
+                        <li>Direct channel users have stronger conversion to engaged sessions
+                    </ul>`,
         learnings: [
-            "Revenue Management",
-            "Hotel KPIs",
-            "Power BI",
-            "Data Visualization",
-            "Performance Metrics"
+            "Website Ananlytics",
+            "Pandas for Data Cleaning",
+            "Matplotliv & Seaborn for Data Visualization",
+            
         ],
-        skills: ["PowerBI", "Hotel Analytics", "Revenue Management"],
-        objective: "Provide hospitality industry with data-driven insights for revenue optimization and performance improvement.",
-        images: [],
-        video: null
+        skills: ["Python", "Data Visualization", "Numpy","Pandas","Seaborn","Matplotlib"],
+        objective: `To uncover patterns in website traffic and user engagement across different time frames and marketing channels, aiming to provide relevant and actionable insights that enhance user experience and inform data-driven marketing strategies.`,
+        images: [
+            {
+                src: "./images/1.jpg",
+                caption: "Page 1"
+            },
+            {
+                src: "./images/2.jpg",
+                caption: "Page 2"
+            },
+            {
+                src: "./images/3.jpg",
+                caption: "Page 3"
+            },
+            {
+                src: "./images/4.jpg",
+                caption: "Page 4"
+            },
+            {
+                src: "./images/5.jpg",
+                caption: "Page 5"
+            }
+        ],
+        video:` <iframe width="560" height="315" src="https://www.youtube.com/embed/7FTI5ZxycW0?si=kbzkflSKUPPxo0S_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
     },
     project4: {
         title: "2024 Lok Sabha Elections Analysis",
@@ -209,8 +242,17 @@ const projectDetails = {
         ],
         skills: ["Python", "PowerBI", "Political Analysis"],
         objective: "Provide unbiased political insights based on historical election data analysis.",
-        images: [],
-        video: null
+        images: [
+            
+            
+        ],
+        video: `
+                <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/QAwDlv9LeJw?si=0X0sqh2dSXKEA23Y"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+                                gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>`
     },
     project5: {
         title: "AtliQ Hardware SQL Challenge",
