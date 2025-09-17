@@ -232,31 +232,56 @@ const projectDetails = {
         video:` <iframe width="560" height="315" src="https://www.youtube.com/embed/7FTI5ZxycW0?si=kbzkflSKUPPxo0S_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
     },
     project4: {
-        title: "2024 Lok Sabha Elections Analysis",
-        description: "AtliQ Media, a private media company, plans to telecast a show on the 2024 Lok Sabha elections in India. Unlike other channels, they will not focus on predicting the winner but will present unbiased insights from the 2014 and 2019 elections and discuss less explored themes.",
+        title: "ED-tech Platform Analysis",
+        description: `<p>Everyone assumes that the most common courses are the most popular. But data tells the different story.</p>
+                    <p>I build a Power bi Dashboard to go beyond the surface-level numbers and uncover the real drivers of success in Ed-tech world.</p>
+                    <p></p>
+                    <h4>Here's what Data tells:</h4>
+                    <ul>
+                        <li>📈 The Mismatch: Business courses are the most common but most of the viewers are from Data Analysis and Software development. This shows huge demand of Tech skills.
+                        <li>⏳ The Duration Myth: Duration of the course doesn't affect the Rating of the Course. Rating depends upon the Quality of the Content.
+                        <li>⭐ The Superstar Effect: Handful of courses and top-rated instructors are responsible for huge chunk of viewership.
+
+                    </ul>`,
+                    
+                    
         learnings: [
-            "Political Data Analysis",
-            "Python Programming", 
-            "Data Visualization",
-            "Statistical Analysis"
+            "Data Analysis",
+            "DAX",
+            "Data Visualization"
+            
         ],
-        skills: ["Python", "PowerBI", "Political Analysis"],
-        objective: "Provide unbiased political insights based on historical election data analysis.",
+        skills: [ "PowerBI", "Data Visualization" ,"DAX","Data Cleaning"],
+        objective: "To evaluate course performance and uncover actionable insights for optimizing an Ed-Tech platform's content strategy.",
         images: [
-            
-            
+            {
+                src: "./images/ED-tech2.png",
+                caption: "ED-tech page 1."
+            },
+            {
+                src: "./images/ED-tech.png",
+                caption: "ED-tech page 2."
+            }
         ],
         video: `
-                <iframe width="560" height="315"
-                        src="https://www.youtube.com/embed/QAwDlv9LeJw?si=0X0sqh2dSXKEA23Y"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media;
-                                gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe>`
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/5VnjfaJzoXc?si=XREc8T8FmJf-3W-q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
     },
     project5: {
-        title: "AtliQ Hardware SQL Challenge",
-        description: "Atliq Hardwares, a leading computer hardware manufacturer in India and internationally, faces a challenge: they lack the quick insights needed for smart decision-making. To address this, they launched an SQL challenge to bridge the data gap.",
+        title: "ED-tech Platform Analysis",
+        description: `This project analyzes website user behavior and engagement across different days, hours, and traffic channels.
+                    <h4>Problem Statement</h3>
+                    <ul>
+                        <li>How do hour, day, and user channel affect website engagement and session quality?
+                        <li>Can we identify high-impact periods and channels for optimized marketing?
+                    </ul>
+                    <h4>Key Insights</h3>
+                    <ul>
+                        <li>Organic Social Channel drives the Highest Traffic
+                        <li>Most of the Traffic arives at late evenings(8-12)
+                        <li>Refferl Channel has the Highest Engagement Rate and Engagement Sessions.
+                        <li>Engagement time and rates peak on weekdays
+                        <li>Direct channel users have stronger conversion to engaged sessions
+                    </ul>`,
         learnings: [
             "Advanced SQL Queries",
             "Database Management",
