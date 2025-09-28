@@ -6,6 +6,7 @@
     <title>Your Name - Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -451,18 +452,141 @@
         <div class="container">
             <div class="contact-card">
                 <h2>Contact Me</h2>
-                <form class="contact-form">
+                <form class="contact-form" id="contactForm">
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <input type="text" name="user_name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
+                        <input type="email" name="user_email" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-send">Send</button>
-                </form>
+                    <button type="submit" class="btn btn-send" id="sendBtn">Send</button>
+                    <div class="loading" id="loading">Sending email...</div>
+                </form>
+<script>
+    // Wait for DOM to fully load
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        // EmailJS Initialization
+        emailjs.init("eOhCY64Vfe4QMmGii");
+
+        // Get elements after DOM is loaded
+        const contactForm = document.getElementById('contactForm');
+        const sendBtn = document.getElementById('sendBtn');
+        const loading = document.getElementById('loading');
+        let messageContainer = document.getElementById('message-container');
+        
+        // AUTO-CREATE missing message container
+        if (!messageContainer) {
+            messageContainer = document.createElement('div');
+            messageContainer.id = 'message-container';
+            messageContainer.style.marginBottom = '20px';
+            if (contactForm) {
+                contactForm.parentNode.insertBefore(messageContainer, contactForm);
+            }
+        }
+        
+        if (!contactForm || !sendBtn || !loading || !messageContainer) {
+            console.error('Required elements not found');
+            return;
+        }
+
+        console.log('Form ready!');
+
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const userName = this.user_name.value.trim();
+            const userEmail = this.user_email.value.trim();
+            const message = this.message.value.trim();
+            
+            if (!userName || !userEmail || !message) {
+                showMessage('Please fill in all required fields.', 'error');
+                return;
+            }
+            
+            if (!isValidEmail(userEmail)) {
+                showMessage('Please enter a valid email address.', 'error');
+                return;
+            }
+            
+            // Disable button and show loading
+            sendBtn.disabled = true;
+            loading.style.display = 'block';
+            
+            // Send notification email to you
+            sendNotificationEmail(userName, userEmail, message)
+                .then(() => {
+                    // Send thank you email to user
+                    return sendThankYouEmail(userName, userEmail);
+                })
+                .then(() => {
+                    showMessage('Thank you! Your message has been sent successfully.', 'success');
+                    contactForm.reset();
+                })
+                .catch((error) => {
+                    console.error('Email error:', error);
+                    showMessage('Error sending message. Please try again.', 'error');
+                })
+                .finally(() => {
+                    sendBtn.disabled = false;
+                    loading.style.display = 'none';
+                });
+        });
+
+        // NOTIFICATION EMAIL (Tumhare liye)
+        function sendNotificationEmail(userName, userEmail, message) {
+            const templateParams = {
+                // Template variables - exactly match karne honge
+                to_email: 'kuldeep832006@gmail.com',    // Your email
+                from_name: userName,                      // User ka name
+                from_email: userEmail,                    // User ka email
+                reply_to: userEmail,                      // Reply to user email
+                user_name: userName,                      // User name duplicate
+                user_email: userEmail,                    // User email duplicate
+                user_message: message,                    // User ka message
+                subject_line: userName + ' contacted Me'  // Dynamic subject
+            };
+            
+            return emailjs.send('service_t99m4ck', 'template_62jdsua', templateParams);
+        }
+
+        // THANK YOU EMAIL (User ke liye)
+        function sendThankYouEmail(userName, userEmail) {
+            const templateParams = {
+                to_email: userEmail,              // User ka email (recipient)
+                to_name: userName,                // User ka name
+                from_name: 'Kuldeep',            // Your name
+                from_email: 'kuldeep832006@gmail.com',  // Your email
+                reply_to: 'kuldeep832006@gmail.com',    // Reply to you
+                user_name: userName,              // User name for content
+                subject_line: 'Thank You'         // Email subject
+            };
+            
+            return emailjs.send('service_esxb5d7', 'template_8s3zvdq', templateParams);
+        }
+
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function showMessage(text, type) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = type === 'success' ? 'success-message' : 'error-message';
+            messageDiv.textContent = text;
+            messageContainer.appendChild(messageDiv);
+            
+            setTimeout(() => {
+                if (messageDiv && messageDiv.parentNode) {
+                    messageDiv.remove();
+                }
+            }, 5000);
+        }
+    });
+</script>
             </div>
         </div>
     </section>
