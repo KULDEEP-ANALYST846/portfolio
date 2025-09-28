@@ -549,8 +549,9 @@
                 user_message: message,                    // User ka message
                 subject_line: userName + ' contacted Me'  // Dynamic subject
             };
-            
-            return emailjs.send('service_t99m4ck', 'template_62jdsua', templateParams);
+            return emailjs.send('service_esxb5d7', 'template_8s3zvdq', templateParams);
+        
+           
         }
 
         // THANK YOU EMAIL (User ke liye)
@@ -564,8 +565,7 @@
                 user_name: userName,              // User name for content
                 subject_line: 'Thank You'         // Email subject
             };
-            
-            return emailjs.send('service_esxb5d7', 'template_8s3zvdq', templateParams);
+             return emailjs.send('service_t99m4ck', 'template_62jdsua', templateParams);
         }
 
         function isValidEmail(email) {
